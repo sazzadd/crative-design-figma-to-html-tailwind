@@ -40,19 +40,39 @@
                 <!-- brand name -->
                 <span>Logo</span>
                 <!-- mobile icon  -->
-                <span class="md:hidden text-3xl mx-2 cursor-pointer"><i name="menu" 
+                <span class="md:hidden text-3xl mx-2 cursor-pointer"><i
+                        name="menu" onclick="Menu(this)"
                         class="fa-solid fa-bars"></i></span>
 
             </div>
 
             <ul
-                class="uppercase md:flex bg-black z-[-1] md:z-auto absolute md:static left-0 w-full md:w-auto md:py-0 py-4 md:opacity-100 opacity-0 top-[400px] transition-all ease-in duration-500">
+                class="uppercase md:flex bg-gray-800 md:bg-black z-[-1] md:z-auto absolute md:static left-0 w-full md:w-auto md:py-0 py-4 md:opacity-100 opacity-0  transition-all ease-in duration-500">
                 <li class="mx-4 my-6 md:my-0"><a href="#">Home</a></li>
                 <li class="mx-4 my-6 md:my-0"><a href="#">Portfolio</a></li>
                 <li class="mx-4 my-6 md:my-0"><a href="#">About</a></li>
                 <li class="mx-4 my-6 md:my-0"><a href="#">Contact</a></li>
             </ul>
         </nav>
+        <!-- js code  -->
+        <!-- mobile menu toggle function  -->
+        <script>
+    function Menu(e) {
+        let list = document.querySelector("ul");
 
+        // Toggle condition
+        if (e.classList.contains("fa-bars")) {
+            e.classList.remove("fa-bars");
+            e.classList.add("fa-xmark"); 
+            list.classList.remove("opacity-0");
+            list.classList.add("opacity-100", "top-[60px]");
+        } else {
+            e.classList.remove("fa-xmark");
+            e.classList.add("fa-bars");
+            list.classList.add("opacity-0");
+            list.classList.remove("opacity-100", "top-[80px]");
+        }
+    }
+</script>
     </body>
 </html>
